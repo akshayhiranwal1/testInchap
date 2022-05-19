@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VehicleFinanceAPI</name>
+    </assembly>
+    <members>
+        <member name="T:VehicleFinanceAPI.Api.Configuration.ConfigurationOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Configuration.ConfigurationOptions.ConfigureService(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationRoot)">
+            <summary>
+            Configures the service.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Configuration.IocContainerConfiguration">
+            <summary>
+            IOC contaner start-up configuration
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Configuration.IocContainerConfiguration.ConfigureService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the service.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Configuration.Settings.ConnectionSettings">
+            <summary>
+            Connection configuration options
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Configuration.SwaggerConfiguration">
+            <summary>
+            Swagger API documentation components start-up configuration
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Configuration.SwaggerConfiguration.ConfigureService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the service.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Configuration.SwaggerConfiguration.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Controllers.FinanceRateRangeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Controllers.FinanceTypeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Controllers.MakeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Controllers.VehicleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Controllers.VehicleController.#ctor(VehicleFinanceAPI.Api.Services.Generic.IGenericService{VehicleFinanceAPI.Data.ViewModel.VehicleViewModel})">
+            <summary>
+            Initializes a new instance of the <see cref="T:VehicleFinanceAPI.Api.Controllers.VehicleController"/> class.
+            </summary>
+            <param name="service">The device service.</param>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Controllers.VehicleTypeController.#ctor(VehicleFinanceAPI.Api.Services.Generic.IGenericService{VehicleFinanceAPI.Data.ViewModel.VehicleTypeViewModel})">
+            <summary>
+            Initializes a new instance of the <see cref="T:VehicleFinanceAPI.Api.Controllers.VehicleTypeController"/> class.
+            </summary>
+            <param name="service">The device service.</param>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Data.Management.DataBaseManager">
+            <summary>
+            Contains all tenants database mappings and options
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.DataBaseManager.GetDataBaseName(System.String,System.Int32)">
+            <summary>
+            Gets the name of the data base.
+            </summary>
+            <param name="masterDbConnection"></param>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns>db name</returns>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Data.Management.IDataBaseManager">
+            <summary>
+            Multitenant database manager
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.IDataBaseManager.GetDataBaseName(System.String,System.Int32)">
+            <summary>
+            Gets the name of the data base.
+            </summary>
+            <param name="masterDbConnection"></param>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns>db name</returns>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Data.Management.IRepository`1">
+            <summary>
+            Interface for generic repository, contains CRUD operation of EF entity
+            </summary>
+            <typeparam name="T">EF entity</typeparam>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Data.Management.IUnitOfWork">
+            <summary>
+            Contains functions to manipulate EF transactions
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.IUnitOfWork.GetRepository``1">
+            <summary>
+            Gets the repository.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <returns>Repository</returns>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.IUnitOfWork.Commit">
+            <summary>
+            Saves all pending changes
+            </summary>
+            <returns>The number of objects in an Added, Modified, or Deleted state</returns>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Data.Management.Repository`1">
+            <summary>
+            Generic repository, contains CRUD operation of EF entity
+            </summary>
+            <typeparam name="T">Entity type</typeparam>
+        </member>
+        <member name="F:VehicleFinanceAPI.Api.Data.Management.Repository`1.context">
+            <summary>
+            EF data base context
+            </summary>
+        </member>
+        <member name="F:VehicleFinanceAPI.Api.Data.Management.Repository`1.dbSet">
+            <summary>
+            Used to query and save instances of
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.#ctor(VehicleFinanceAPI.Api.Data.IDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VehicleFinanceAPI.Api.Data.Management.Repository`1"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.Add(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.Get``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.Get(System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.FindBy(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <inheritdoc />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.GetAll">
+            <inheritdoc />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.Delete(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Data.Management.Repository`1.Update(`0)">
+            <inheritdoc />
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Helpers.Constants">
+            <summary>
+            All hardcoded strings can be read as properties in the application
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Mappings.MapsProfile">
+            <summary>
+            Contains objects mapping
+            </summary>
+            <seealso cref="T:AutoMapper.Configuration.MapperConfigurationExpression" />
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Mappings.MapsProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VehicleFinanceAPI.Api.Mappings.MapsProfile"/> class
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Program">
+            <summary>
+            Starting or hosting class of the applcation 
+            </summary>
+        </member>
+        <member name="M:VehicleFinanceAPI.Api.Program.Main(System.String[])">
+            <summary>
+            Entry method for dotnet core hosting
+            </summary>
+            <param name="args">Command line parameters</param>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Repository.IGenericRepository`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Services.IFinanceRateRange`1">
+            <summary>
+            Device service interface
+            </summary>
+        </member>
+        <member name="T:VehicleFinanceAPI.Api.Services.IVehicle`1">
+            <summary>
+            Device service interface
+            </summary>
+        </member>
+    </members>
+</doc>
